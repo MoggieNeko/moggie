@@ -1,0 +1,1655 @@
+/* Reset 一些預設樣式 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Header 區塊 */
+header {
+  background: linear-gradient(135deg, #4a90e2, #5464c7);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+header .logo {
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+header .tagline {
+  font-size: 1.2em;
+  margin-top: 5px;
+  opacity: 0.9;
+}
+
+/* 語言選擇器 - 優化設計 */
+.language-selector {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 5px;
+  border-radius: 25px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.lang-btn {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.lang-btn:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lang-btn.active {
+  background: white;
+  color: #4a90e2;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* 導覽列 */
+nav {
+  background: #333;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 0;
+  display: block;
+}
+
+nav a:hover {
+  color: #4a90e2;
+}
+
+/* 主內容區域 */
+main {
+  padding: 20px;
+}
+
+/* Map 區塊 - 實際地圖 */
+#map-section {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+#map-section h2 {
+  margin-bottom: 15px;
+}
+
+#map {
+  height: 500px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.location-popup {
+  font-family: Arial, sans-serif;
+}
+
+.location-popup h3 {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #4a90e2;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.location-popup p {
+  margin-bottom: 5px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.location-popup .verified {
+  display: inline-block;
+  background: #4caf50;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 5px;
+  text-transform: capitalize;
+}
+
+.category-tag.attractions {
+  background-color: rgba(74, 144, 226, 0.15);
+  color: #4a90e2;
+}
+
+.category-tag.restaurants {
+  background-color: rgba(244, 67, 54, 0.15);
+  color: #f44336;
+}
+
+.category-tag.shopping {
+  background-color: rgba(76, 175, 80, 0.15);
+  color: #4caf50;
+}
+
+.category-tag.user-reviewed {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+}
+
+/* 地圖上的評論樣式 */
+.popup-reviews {
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+}
+
+.popup-reviews h4 {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.popup-reviews-content {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.popup-review {
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px dotted #eee;
+}
+
+.popup-review:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.popup-review-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.popup-review-user {
+  font-weight: bold;
+  font-size: 13px;
+  color: #555;
+}
+
+.popup-review-rating {
+  color: #f90;
+  font-size: 12px;
+}
+
+.popup-review-text {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #666;
+}
+
+.see-all-reviews {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #4a90e2;
+  text-decoration: none;
+  padding: 3px 0;
+}
+
+.see-all-reviews:hover {
+  text-decoration: underline;
+}
+
+/* 搜尋與篩選區塊 */
+.search-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.search-filter input,
+.search-filter select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.search-filter button {
+  padding: 8px 15px;
+  background: #4a90e2;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.search-filter button:hover {
+  background: #357ab8;
+}
+
+/* 評論發佈區塊 */
+#reviews, #recent-reviews {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+}
+
+#reviews h2, #recent-reviews h2 {
+  margin-bottom: 15px;
+}
+
+#reviewForm label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+#reviewForm textarea,
+#reviewForm input[type="text"],
+#reviewForm input[type="file"],
+#reviewForm select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+#reviewForm button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#reviewForm button:hover {
+  background: #357ab8;
+}
+
+/* 最新評論卡片 - 修改為平行顯示3個評論 */
+#reviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-height: 300px; /* 保證足夠的高度 */
+}
+
+.review-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transition: all 0.5s ease;
+  margin-bottom: 15px;
+  position: relative; /* 改為相對定位 */
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.review-card .review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.review-card .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.review-card .user-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 12px;
+  border: 2px solid #f0f0f0;
+}
+
+.review-card .location-name {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #4a90e2;
+}
+
+.review-card .rating {
+  color: #f90;
+  font-weight: bold;
+  font-size: 18px;
+  background: #fff9e6;
+  padding: 3px 10px;
+  border-radius: 15px;
+}
+
+.review-card .review-content {
+  margin: 15px 0;
+  line-height: 1.7;
+  color: #444;
+}
+
+.review-card .review-date {
+  font-size: 12px;
+  color: #888;
+  margin-top: 0;
+  text-align: left;
+  font-style: italic;
+}
+
+/* AI 分析與推薦樣式 */
+.ai-analysis {
+  background: linear-gradient(to right, #f8f9fa, #edf7ff);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid #e0e6ed;
+}
+
+.ai-analysis-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.ai-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  background: linear-gradient(135deg, #4a90e2, #5464c7);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-title {
+  color: #4a4d52;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ai-progress {
+  height: 8px;
+  background: #e5e9f0;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.ai-progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, #4a90e2, #5464c7);
+  width: 0;
+  transition: width 0.4s ease;
+}
+
+.ai-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.keyword {
+  background: rgba(74, 144, 226, 0.1);
+  color: #4a90e2;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ai-summary {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border-left: 4px solid #4a90e2;
+}
+
+.ai-summary p {
+  color: #4a4d52;
+  font-weight: 500;
+}
+
+/* 旅行路線推薦 */
+.travel-routes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.travel-route {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  border: 1px solid #eaeaea;
+}
+
+.route-title {
+  color: #4a90e2;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.route-description {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.route-timeline {
+  border-left: 3px solid #4a90e2;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.route-stop {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.route-stop:before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #4a90e2;
+  left: -29px;
+  top: 5px;
+}
+
+.stop-time {
+  font-weight: bold;
+  font-size: 16px;
+  color: #4a90e2;
+  margin-bottom: 5px;
+}
+
+.stop-details {
+  padding-left: 10px;
+}
+
+.save-route-btn {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.save-route-btn:hover {
+  background: #357ab8;
+}
+
+/* Profile 區塊 */
+.profile-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e0e6ed;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.profile-info {
+  text-align: center;
+  border-right: none;
+  padding: 25px;
+  background: linear-gradient(to bottom, #f8f9fa, #edf7ff);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+  position: relative;
+  height: fit-content;
+}
+
+.profile-info .avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 5px solid white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.profile-info .avatar:hover {
+  transform: scale(1.05);
+}
+
+.profile-info h3 {
+  margin-bottom: 15px;
+  color: #4a4d52;
+  font-size: 22px;
+}
+
+.profile-info p {
+  margin-bottom: 12px;
+  color: #666;
+  background: rgba(255,255,255,0.7);
+  padding: 8px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.user-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.user-reviews, .saved-places {
+  margin-top: 0;
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+  border: 1px solid #f0f0f0;
+}
+
+.user-reviews h3, .saved-places h3 {
+  margin-bottom: 20px;
+  border-bottom: 2px solid #edf7ff;
+  padding-bottom: 10px;
+  color: #4a90e2;
+  font-size: 20px;
+  position: relative;
+}
+
+.user-reviews h3:after, .saved-places h3:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 80px;
+  height: 2px;
+  background: #4a90e2;
+}
+
+#user-reviews-container, #saved-places-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+#user-reviews-container .review-card {
+  margin-bottom: 0;
+  transition: all 0.3s ease;
+  border-left: 4px solid #4a90e2;
+}
+
+#user-reviews-container .review-card:hover {
+  transform: translateY(-5px);
+}
+
+.saved-place {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  border: none;
+}
+
+.saved-place:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #4a90e2, #5464c7);
+  z-index: 1;
+}
+
+.saved-place img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.saved-place:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+}
+
+.saved-place:hover img {
+  transform: scale(1.08);
+}
+
+.saved-place-content {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+}
+
+.saved-place h4 {
+  margin-bottom: 12px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.saved-place h4:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #4a90e2;
+}
+
+.saved-place-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.saved-place-category {
+  color: #666;
+  font-size: 13px;
+  text-transform: capitalize;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: rgba(74, 144, 226, 0.08);
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.saved-place-category:before {
+  content: '•';
+  margin-right: 6px;
+  color: #4a90e2;
+  font-size: 16px;
+}
+
+.saved-place-rating {
+  display: inline-flex;
+  align-items: center;
+  color: #f90;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.saved-place-rating:before {
+  content: '★';
+  margin-right: 4px;
+}
+
+.saved-place-desc {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.saved-place-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.view-place-btn {
+  padding: 8px 15px;
+  background: transparent;
+  color: #4a90e2;
+  border: 1px solid #4a90e2;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-place-btn:hover {
+  background: #4a90e2;
+  color: white;
+}
+
+.remove-place-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: rgba(239, 239, 239, 0.8);
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.remove-place-btn:hover {
+  background: rgba(226, 74, 74, 0.1);
+  color: #e24a4a;
+}
+
+/* Badge for new saved places */
+.saved-place-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(74, 144, 226, 0.9);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 1;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  backdrop-filter: blur(5px);
+}
+
+/* Footer 區塊 */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 30px 20px 10px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #555;
+  padding-bottom: 5px;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section li {
+  margin-bottom: 5px;
+}
+
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #4a90e2;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #555;
+}
+
+/* 響應式設計 - 更新 */
+@media (max-width: 992px) {
+  .profile-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-info {
+    padding-right: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  
+  .user-content {
+    gap: 25px;
+  }
+  
+  .travel-routes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Base layout adjustments */
+  body {
+    font-size: 16px;
+  }
+  
+  main {
+    padding: 15px 10px;
+  }
+  
+  section {
+    margin-bottom: 30px;
+    padding: 15px;
+  }
+  
+  /* Mobile header & navigation */
+  header {
+    padding: 15px 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+  
+  .tagline {
+    font-size: 14px;
+  }
+  
+  /* Mobile navigation with hamburger menu */
+  .nav-container {
+    width: 100%;
+    position: relative;
+  }
+  
+  .hamburger-menu {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    z-index: 1000;
+    background: none;
+    border: none;
+  }
+  
+  .hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: 6px 0;
+    background-color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  
+  .hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+  
+  nav {
+    width: 100%;
+    height: auto;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  nav.active ul {
+    max-height: 400px;
+  }
+  
+  nav li {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  
+  nav li a {
+    padding: 15px;
+    width: 100%;
+    display: block;
+  }
+  
+  /* Language selector for mobile */
+  .language-selector {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    justify-content: center;
+    position: static;
+    transform: none;
+  }
+  
+  .language-selector .lang-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  
+  /* Map section for mobile */
+  #map {
+    height: 300px;
+  }
+  
+  .search-filter {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .search-filter input,
+  .search-filter select,
+  .search-filter button {
+    width: 100%;
+    height: 44px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  /* Mobile form elements */
+  form {
+    padding: 15px;
+  }
+  
+  form label {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  form input,
+  form textarea,
+  form select,
+  form button {
+    font-size: 16px;
+    padding: 12px;
+    margin-bottom: 16px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  form button {
+    height: 48px;
+  }
+  
+  /* Mobile review cards */
+  .review-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .review-content {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  
+  .review-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .review-actions button {
+    min-width: 70px;
+    height: 40px;
+    border-radius: 20px;
+  }
+  
+  /* Mobile AI recommendations */
+  .tag-selection-container {
+    padding: 15px;
+  }
+  
+  .interest-tag {
+    padding: 10px 15px;
+    margin: 4px;
+    min-width: 100px;
+    text-align: center;
+    font-size: 15px;
+  }
+  
+  #generate-itinerary-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    height: 50px;
+  }
+  
+  .ai-analysis {
+    padding: 15px;
+  }
+  
+  .ai-keywords .keyword {
+    margin: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  
+  .travel-routes {
+    grid-template-columns: 1fr;
+  }
+  
+  .route-stop {
+    padding-left: 20px;
+  }
+  
+  /* Mobile user profile */
+  .profile-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .profile-info {
+    padding: 20px 15px;
+  }
+  
+  .profile-info .avatar {
+    width: 120px;
+    height: 120px;
+  }
+  
+  #user-reviews-container, 
+  #saved-places-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .saved-place img {
+    height: 160px;
+  }
+  
+  .saved-place-content {
+    padding: 15px;
+  }
+  
+  .saved-place-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .saved-place-actions button {
+    width: 100%;
+  }
+  
+  .view-place-btn, 
+  .remove-place-btn {
+    padding: 12px;
+    height: 44px;
+    border-radius: 6px;
+  }
+  
+  /* Mobile-friendly footer */
+  footer {
+    padding: 20px 15px 10px;
+  }
+  
+  .footer-section {
+    padding: 0 10px;
+    margin-bottom: 15px;
+    min-width: 100%;
+  }
+  
+  /* Touch-friendly improvements */
+  button, 
+  a, 
+  .interest-tag, 
+  select, 
+  input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Floating action button for mobile */
+  .mobile-fab {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #4a90e2;
+    color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-fab:active {
+    transform: scale(0.9);
+    background-color: #3d7ac2;
+  }
+  
+  /* Mobile adjustments for viewport heights */
+  #map {
+    max-height: 50vh;
+  }
+  
+  /* Fix sticky positioning for header */
+  header {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Prevent horizontal overflow */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Mobile card adjustments */
+  .review-card, 
+  .saved-place {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  
+  /* Mobile typography improvements */
+  h2 {
+    font-size: 22px;
+  }
+  
+  h3 {
+    font-size: 18px;
+  }
+  
+  /* Mobile-specific scrolling improvements */
+  .ai-keywords {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    padding-bottom: 10px;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .ai-keywords::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+  
+  /* Better form field focus states for touch */
+  input:focus, 
+  textarea:focus, 
+  select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+  }
+}
+
+@media (max-width: 480px) {
+  .search-filter {
+    flex-direction: column;
+  }
+  
+  .search-filter input,
+  .search-filter select {
+    max-width: 100%;
+  }
+}
+
+/* 讚和踩功能的樣式 */
+.review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.review-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.like-btn, .dislike-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  color: #666;
+}
+
+.like-btn:hover, .dislike-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.like-btn.active {
+  color: #4a90e2;
+  background-color: rgba(74, 144, 226, 0.1);
+}
+
+.dislike-btn.active {
+  color: #e24a4a;
+  background-color: rgba(226, 74, 74, 0.1);
+}
+
+.like-icon, .dislike-icon {
+  font-style: normal;
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.like-count, .dislike-count {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Hide recommendation text above User Profile */
+#profile h2::before {
+  display: none;
+}
+
+section#profile {
+  position: relative;
+}
+
+section#profile > img,
+section#profile > p {
+  display: none;
+}
+
+/* Recommendation cards inside the recommendations section only */
+#recommendations .card img,
+#recommendations .card h3,
+#recommendations .card p {
+  display: block;
+}
+
+/* Section separation to prevent content bleeding */
+main > section {
+  clear: both;
+  position: relative;
+  overflow: visible;
+}
+
+/* Hide unwanted content from profile */
+#profile::before,
+#profile > *:not(h2):not(.profile-container) {
+  display: none !important;
+}
+
+/* Interest tag selection styles */
+.tag-selection-container {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border: 1px solid #e0e6ed;
+}
+
+.tag-selection-container h3 {
+  margin-bottom: 20px;
+  color: #4a4d52;
+  font-size: 18px;
+  text-align: center;
+}
+
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+.interest-tag {
+  background: #f5f7fa;
+  color: #4a4d52;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #e0e6ed;
+  user-select: none;
+}
+
+.interest-tag:hover {
+  background: #edf7ff;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.interest-tag.selected {
+  background: #4a90e2;
+  color: white;
+  border-color: #4a90e2;
+  font-weight: 500;
+}
+
+.selected-tags-container {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.selected-tags-container p {
+  margin: 0;
+  color: #666;
+  font-size: 15px;
+}
+
+#selected-tags-display {
+  color: #4a90e2;
+  font-weight: 500;
+}
+
+#generate-itinerary-btn {
+  display: block;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #4a90e2, #5464c7);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(74, 144, 226, 0.2);
+}
+
+#generate-itinerary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(74, 144, 226, 0.3);
+}
+
+#generate-itinerary-btn:active {
+  transform: translateY(0);
+}
+
+/* Touch device specific styles */
+.touch-device a:hover,
+.touch-device button:hover,
+.touch-device .interest-tag:hover {
+  /* Disable hover effects on touch devices */
+  transform: none !important;
+  box-shadow: none !important;
+  background: initial !important;
+}
+
+/* Active state for touch interactions */
+.touch-active {
+  transform: scale(0.98) !important;
+  opacity: 0.9 !important;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .navbar {
+        padding: 10px;
+    }
+    
+    .search-bar input {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .section {
+        margin-bottom: 20px;
+    }
+    
+    .card {
+        margin-bottom: 15px;
+    }
+    
+    .card-content {
+        padding: 12px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    .interest-tag {
+        margin: 3px;
+        padding: 5px 10px;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+    }
+    
+    .profile-picture {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    #recommendations-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Touch device enhancements */
+.touch-device button,
+.touch-device a,
+.touch-device .interest-tag,
+.touch-device .card {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.touch-active {
+    opacity: 0.8;
+    transform: scale(0.98);
+}
+
+/* Floating Action Button */
+.mobile-fab {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 24px;
+    line-height: 56px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mobile-fab:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Only show FAB on mobile */
+@media (max-width: 768px) {
+    .mobile-fab {
+        display: block;
+    }
+    
+    /* Improved form elements for mobile */
+    input, select, textarea {
+        font-size: 16px; /* Prevents auto-zoom on iOS */
+        padding: 12px;
+    }
+    
+    /* Adjustments for map on mobile */
+    #map-section {
+        padding-bottom: 0;
+    }
+    
+    /* Improved tap targets */
+    .nav-button, 
+    .button,
+    #add-review-button {
+        padding: 12px 16px;
+        min-height: 44px;
+    }
+    
+    /* Collapsible navigation on mobile */
+    .navbar-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+    }
+    
+    .navbar-links.active {
+        display: flex;
+    }
+    
+    .navbar-toggle {
+        display: block;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        cursor: pointer;
+    }
+    
+    /* Show the toggle button only on mobile */
+    .navbar-toggle {
+        display: none;
+    }
+    
+    @media (max-width: 768px) {
+        .navbar-toggle {
+            display: block;
+        }
+        
+        .navbar {
+            flex-wrap: wrap;
+        }
+    }
+} 
